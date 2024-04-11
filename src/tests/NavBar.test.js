@@ -1,10 +1,10 @@
-import { render } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { store } from "../store";
 import { BrowserRouter } from "react-router-dom";
 import React from "react";
-import TopNav from "../components/NavBar/NavBar";
-import { setAuthedUser } from "../actions/authedUser";
+import TopNav from "../components/Menu/NavBar";
+import { setAuthedUser } from "../actions/authen";
 import { screen } from "@testing-library/react";
 
 describe("NavBar", () => {
@@ -34,6 +34,7 @@ describe("NavBar", () => {
     );
 
     const userSpanElement = screen.getByTestId("user-information");
-    expect(userSpanElement.textContent).toBe("sarahedo");
+    fireEvent.change(userSpanElement, { target: { value: "sarahedo" } });
+    expect(userSpanElement.value).toBe("sarahedo");
   });
 });

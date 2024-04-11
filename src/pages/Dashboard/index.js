@@ -50,7 +50,7 @@ const Dashboard = ({ authedUser, questions, users }) => {
   return (
     <div>
       <div className="row text-center" style={{padding:'1em'}}>
-        <div className="col-sm">
+        <div className="col-sm" data-testid="new-question-button">
           <button
             onClick={() => setShowNewQuestions(true)}
             className={`${
@@ -62,7 +62,7 @@ const Dashboard = ({ authedUser, questions, users }) => {
             New Questions
           </button>
         </div>
-        <div className="col-sm">
+        <div className="col-sm" data-testid="answered-question-button">
           <button
             onClick={() => setShowNewQuestions(false)}
             className={`${

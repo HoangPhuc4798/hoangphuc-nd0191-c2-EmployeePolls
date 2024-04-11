@@ -10,7 +10,6 @@ const Login = ({ dispatch, loggedIn }) => {
   if (loggedIn) {
     const urlParams = new URLSearchParams(window.location.search);
     const redirectUrl = urlParams.get("redirectUrl");
-    console.log(redirectUrl);
     return <Navigate to={redirectUrl} />;
   }
 
@@ -65,6 +64,7 @@ const Login = ({ dispatch, loggedIn }) => {
                     value={username}
                     required
                     onChange={handleUsernameInput}
+                    data-testid="username"
                   />
                 </div>
                 <label htmlFor="text">Password</label>
@@ -77,6 +77,7 @@ const Login = ({ dispatch, loggedIn }) => {
                     value={password}
                     required
                     onChange={handlePasswordInput}
+                    data-testid="password"
                   />
                 </div>
                 <div className="text-center">

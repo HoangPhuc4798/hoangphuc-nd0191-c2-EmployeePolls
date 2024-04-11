@@ -3,8 +3,8 @@ import { Provider } from "react-redux";
 import { store } from "../store";
 import { BrowserRouter } from "react-router-dom";
 import React from "react";
-import Login from "../pages/Login/Login";
-import { fetchAndPopulateInitialData } from "../actions/initalData";
+import Login from "../pages/Login/index";
+import { fetchAndPopulateInitialData } from "../actions/data";
 import { screen } from "@testing-library/react";
 
 describe("Login", () => {

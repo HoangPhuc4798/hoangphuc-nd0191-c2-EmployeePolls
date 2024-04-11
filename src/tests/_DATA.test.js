@@ -1,4 +1,4 @@
-const { _saveQuestionAnswer, _saveQuestion } = require("../api/_DATA");
+const { _saveQuestionAnswer, _saveQuestion } = require("../utils/_DATA");
 
 describe("unit test 1", () => {
   it("saved question is returned and all expected fields are populated when correctly formatted data is passed to the function.", async () => {

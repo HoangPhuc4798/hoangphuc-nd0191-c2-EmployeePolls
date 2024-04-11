@@ -32,7 +32,9 @@ const AddPoll = ({ dispatch, authedUser }) => {
   return (
     <div className="form-control flex text-center">
       <form onSubmit={handleSubmit}>
-        <h1 className="text-3xl font-boldtext-green">New Poll</h1>
+        <div className="flex justify-center text-center align-middle">
+          <h2 className="mt-6 text-2xl font-bold">Would You Rather?</h2>
+        </div>
         <div className="mb-3 mt-3">
           <label
             htmlFor="firstOption"

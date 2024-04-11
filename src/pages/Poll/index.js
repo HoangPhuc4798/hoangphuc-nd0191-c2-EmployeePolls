@@ -49,11 +49,11 @@ const PollPage = ({ dispatch, authedUser, users, questions }) => {
         <div>
           {question ? (
             <div>
-              <h1 className="text-3xl font-bold mt-9 mb-5 text-center text-green-500">
+              <h1 className="text-3xl font-bold text-center align-middle">
                 Poll by {author?.name}
               </h1>
 
-              <div className="flex justify-center">
+              <div className="flex justify-center text-center align-middle">
                 <img
                   src={author?.avatarURL}
                   alt="Profile"
@@ -61,32 +61,82 @@ const PollPage = ({ dispatch, authedUser, users, questions }) => {
                 />
               </div>
 
-              <div className="flex justify-center">
+              <div className="flex justify-center text-center align-middle">
                 <h2 className="mt-6 text-2xl font-bold">Would You Rather?</h2>
               </div>
-              {/* <div className="card">
-                <div className="card-body">Content</div>
-                <div className="card-footer">Footer</div>
+              <div class="row px-5 py-1">
+                <div class="col-sm m-2">
+                  <div className={`card ${
+                      hasVotedForOptionOne ? "bg-success" : ""
+                    }`}>
+                    <div className="card-body text-center align-middle">
+                      <div className={hasVotedForOptionOne ? "chosen" : ""}>
+                        <p className="mb-2 font-bold">
+                          {question?.optionOne.text}
+                        </p>
+                        {hasVoted && (
+                          <p className="text-xs">
+                            Votes: {question?.optionOne.votes.length} (
+                            {calcPercentage("optionOne")})
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                    {!hasVoted && (
+                      <button
+                        onClick={(e) => handleOption(e, "optionOne")}
+                        disabled={hasVoted}
+                        className="btn btn-success text-center align-middle"
+                      >
+                        CLICK
+                      </button>
+                    )}
+                  </div>
+                </div>
+                <div class="col-sm m-2">
+                  <div className={`card ${
+                      hasVotedForOptionTwo ? "bg-success" : ""
+                    }`}>
+                    <div className="card-body text-center align-middle">
+                      <p className="mb-2 font-bold">
+                        {question?.optionTwo.text}
+                      </p>
+
+                      {hasVoted && (
+                        <p className="text-xs">
+                          Votes: {question?.optionTwo.votes.length} (
+                          {calcPercentage("optionTwo")})
+                        </p>
+                      )}
+                    </div>
+
+                    {!hasVoted && (
+                      <button
+                        onClick={(e) => handleOption(e, "optionTwo")}
+                        disabled={hasVoted}
+                        className="btn btn-success text-center align-middle"
+                      >
+                        CLICK
+                      </button>
+                    )}
+                  </div>
+                </div>
               </div>
-               */}
-              <div className="flex align-middle justify-center">
-                <div className="grid grid-cols-2 gap-4 mt-4 w-3/5 text-center">
+
+              {/* <div className="flex align-middle justify-center">
+                <div className="text-center">
                   <button
                     onClick={(e) => handleOption(e, "optionOne")}
                     disabled={hasVoted}
-                    className={`p-2 rounded-xl bg-slate-400 hover:shadow-xl transition ${
-                      hasVotedForOptionOne ? "bg-green-500 text-white" : ""
+                    className={`p-2 rounded-xl ${
+                      hasVotedForOptionOne ? "text-white" : ""
                     }`}
                   >
                     <div className={hasVotedForOptionOne ? "chosen" : ""}>
                       <p className="mb-2 font-bold">
                         {question?.optionOne.text}
                       </p>
-                      {!hasVoted && (
-                        <p className="mb-3 underline underline-offset-4">
-                          Click to vote
-                        </p>
-                      )}
+                      {!hasVoted && <p className="btn">Click to vote</p>}
                       {hasVoted && (
                         <p className="text-xs">
                           Votes: {question?.optionOne.votes.length} (
@@ -99,16 +149,12 @@ const PollPage = ({ dispatch, authedUser, users, questions }) => {
                   <button
                     onClick={(e) => handleOption(e, "optionTwo")}
                     disabled={hasVoted}
-                    className={`p-2 rounded-xl bg-slate-400 hover:shadow-xl transition ${
-                      hasVotedForOptionTwo ? "bg-green-500 text-white" : ""
+                    className={`p-2 rounded-xl ${
+                      hasVotedForOptionTwo ? "text-white" : ""
                     }`}
                   >
                     <p className="mb-2 font-bold">{question?.optionTwo.text}</p>
-                    {!hasVoted && (
-                      <p className="mb-3 underline underline-offset-4">
-                        Click to vote
-                      </p>
-                    )}
+                    {!hasVoted && <p className="btn">Click to vote</p>}
                     {hasVoted && (
                       <p className="text-xs">
                         Votes: {question?.optionTwo.votes.length} (
@@ -117,7 +163,7 @@ const PollPage = ({ dispatch, authedUser, users, questions }) => {
                     )}
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           ) : (
             <NotFound />

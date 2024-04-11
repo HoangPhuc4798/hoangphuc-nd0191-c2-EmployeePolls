@@ -59,6 +59,7 @@ const SideNav = ({ dispatch, authedUserId, avatarURL }) => {
             placeholder={authedUserId}
             data-testid="user-information"
             disabled
+            value={authedUserId}
           />
           <button onClick={logout} className="btn btn-info m-1">
             Logout
