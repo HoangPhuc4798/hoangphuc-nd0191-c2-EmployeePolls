@@ -40,7 +40,6 @@ const AddPoll = ({ dispatch, authedUser }) => {
             htmlFor="firstOption"
             data-testid="firstOptionLabel"
             className="form-label block text-sm font-medium mx-sm-3"
-            for="email"
           >
             First Option
           </label>

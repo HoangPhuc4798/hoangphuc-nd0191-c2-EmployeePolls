@@ -35,7 +35,6 @@ export const handleAddQuestion = (question) => async (dispatch) => {
       question.optionTwoText,
       question.author
     );
-    console.log(response);
     dispatch(addNewQuestion(response));
     dispatch(addQuestionForUser(response));
   } catch (error) {

@@ -64,8 +64,8 @@ const PollPage = ({ dispatch, authedUser, users, questions }) => {
               <div className="flex justify-center text-center align-middle">
                 <h2 className="mt-6 text-2xl font-bold">Would You Rather?</h2>
               </div>
-              <div class="row px-5 py-1">
-                <div class="col-sm m-2">
+              <div className="row px-5 py-1">
+                <div className="col-sm m-2">
                   <div className={`card ${
                       hasVotedForOptionOne ? "bg-success" : ""
                     }`}>
@@ -93,7 +93,7 @@ const PollPage = ({ dispatch, authedUser, users, questions }) => {
                     )}
                   </div>
                 </div>
-                <div class="col-sm m-2">
+                <div className="col-sm m-2">
                   <div className={`card ${
                       hasVotedForOptionTwo ? "bg-success" : ""
                     }`}>

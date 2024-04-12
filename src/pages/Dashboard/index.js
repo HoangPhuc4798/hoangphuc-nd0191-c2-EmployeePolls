@@ -30,10 +30,9 @@ const Dashboard = ({ authedUser, questions, users }) => {
                     : answeredQuestions(question)
                 )
                 .map((question) => (
-                  <tr key={question}>
+                  <tr key={question.id}>
                     <td className="d-flex justify-content-center">
                       <Question
-                        key={question.id}
                         question={question}
                         author={users[question.author]}
                       />
